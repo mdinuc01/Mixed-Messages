@@ -1,3 +1,4 @@
+//array of jokes
 const jokes = [
   {
     whoseThere: "Tank",
@@ -40,3 +41,20 @@ const jokes = [
     punchLine: "Car go beep, beep!"
   }
 ];
+
+//generating random number to pick joke to display
+let jokeNumber = Math.floor(Math.random() * 10);
+
+//function to display messages at different times
+let showMessage = (message, interval) => {
+  setTimeout(() => {
+    console.log(message);
+  }, interval * 1000);
+};
+
+//displaying knock knock joke
+showMessage("Knock Knock", 1);
+showMessage("Who's there?", 3);
+showMessage(`${jokes[jokeNumber].whoseThere}`, 5);
+showMessage(`${jokes[jokeNumber].whoseThere} who?`, 7);
+showMessage(`${jokes[jokeNumber].punchLine}`, 9);
